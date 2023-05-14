@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
 from PIL import Image
+from pathlib import Path
 
 st.set_page_config(
     page_title="Halim's personal website", page_icon=":tada:", layout="wide"
@@ -20,7 +21,7 @@ def local_css(filename):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
-local_css(r"style/style.css")
+local_css(Path("style/style.css"))
 
 ############ Headers section ####################
 with st.container():
@@ -33,8 +34,8 @@ with st.container():
 lottie_coding = load_lottieurl(
     "https://assets9.lottiefiles.com/packages/lf20_iv4dsx3q.json"
 )
-img_contact_form = Image.open(r"images\binary.jpg")
-img_lottie_animation = Image.open(r"images\screen.jpg")
+img_contact_form = Image.open(Path("images/binary.jpg"))
+img_lottie_animation = Image.open(Path("images/screen.jpg"))
 img_robotic_arm = load_lottieurl(
     "https://assets1.lottiefiles.com/packages/lf20_bPtkGeNd9y.json"
 )
