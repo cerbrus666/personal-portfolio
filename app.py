@@ -35,6 +35,12 @@ lottie_coding = load_lottieurl(
 )
 img_contact_form = Image.open(r"images\binary.jpg")
 img_lottie_animation = Image.open(r"images\screen.jpg")
+img_robotic_arm = load_lottieurl(
+    "https://assets1.lottiefiles.com/packages/lf20_bPtkGeNd9y.json"
+)
+threed_printer = load_lottieurl(
+    "https://assets1.lottiefiles.com/packages/lf20_vu2p4il8.json"
+)
 
 
 ####### What I do #############
@@ -61,20 +67,22 @@ with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
         # insert image
-        st.image(img_lottie_animation)
+        # st.image(img_lottie_animation)
+        st_lottie(img_robotic_arm, height=300, key="robotic")
     with text_column:
-        st.subheader("Animations here?")
-        st.write("Description projects")
-        st.markdown("Watch video")
+        st.subheader("VEX Robotics")
+        st.write("I created a line following robot")
+        # st.markdown("Watch video")
 
     with st.container():
         image_column, text_column = st.columns((1, 2))
         with image_column:
-            st.image(img_contact_form)
+            # st.image(img_contact_form)
+            st_lottie(threed_printer, height=300, key="3dprinter")
         with text_column:
-            st.subheader("Animations here?")
-            st.write("Description projects")
-            st.markdown("Watch video")
+            st.subheader("Make stuff with 3D printer")
+            st.write("I make stuff that ease my daily life")
+            # st.markdown("Watch video")
 
 
 #### Contact form ############
