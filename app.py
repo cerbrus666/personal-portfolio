@@ -29,6 +29,7 @@ lottie_coding = load_lottieurl(
 img_contact_form = Image.open(r"images\binary.jpg")
 img_lottie_animation = Image.open(r"images\screen.jpg")
 
+
 ####### What I do #############
 with st.container():
     st.write("---")
@@ -67,3 +68,25 @@ with st.container():
             st.subheader("Animations here?")
             st.write("Description projects")
             st.markdown("Watch video")
+
+
+#### Contact form ############
+with st.container():
+    st.write("---")
+    st.header("Get in touch with me")
+    st.write("###")
+
+    contact_form = """
+    <form action="https://formsubmit.co/your@email.com" method="POST">
+     <input type="hidden" name="_captcha" value="false">
+     <input type="text" name="Your name" required>
+     <input type="email" name="Your email" required>
+     <textarea name="message" placeholder ="Your message here" required></textarea>
+     <button type="submit">Send</button>
+</form>"""
+
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.markdown(contact_form, unsafe_allow_html=True)
+    with right_column:
+        st.empty()
