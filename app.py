@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
+from PIL import Image
 
 st.set_page_config(
     page_title="Halim's personal website", page_icon=":tada:", layout="wide"
@@ -25,6 +26,8 @@ with st.container():
 lottie_coding = load_lottieurl(
     "https://assets9.lottiefiles.com/packages/lf20_iv4dsx3q.json"
 )
+img_contact_form = Image.open(r"images\binary.jpg")
+img_lottie_animation = Image.open(r"images\screen.jpg")
 
 ####### What I do #############
 with st.container():
@@ -42,14 +45,25 @@ with st.container():
         st_lottie(lottie_coding, height=300, key="coding")
 
 
-# #### Projects ##############
-# with st.container():
-#     st.write("---")
-#     st.header("My projects")
-#     st.write("##")
-#     image_column, text_column = st.columns((1, 2))
-#     with image_column:
-#         # insert image
-#     with text_column:
-#         st.subheader("Animations here?")
-#         st.write()
+#### Projects ##############
+with st.container():
+    st.write("---")
+    st.header("My projects")
+    st.write("##")
+    image_column, text_column = st.columns((1, 2))
+    with image_column:
+        # insert image
+        st.image(img_lottie_animation)
+    with text_column:
+        st.subheader("Animations here?")
+        st.write("Description projects")
+        st.markdown("Watch video")
+
+    with st.container():
+        image_column, text_column = st.columns((1, 2))
+        with image_column:
+            st.image(img_contact_form)
+        with text_column:
+            st.subheader("Animations here?")
+            st.write("Description projects")
+            st.markdown("Watch video")
