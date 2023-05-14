@@ -15,6 +15,13 @@ def load_lottieurl(url):
     return r.json()
 
 
+def local_css(filename):
+    with open(filename) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+local_css(r"style/style.css")
+
 ############ Headers section ####################
 with st.container():
     st.subheader("Hi, I am Halim :wave:")
